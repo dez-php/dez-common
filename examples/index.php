@@ -7,7 +7,7 @@ ini_set('display_errors', 'On');
 
 include_once __DIR__ .'/../vendor/autoload.php';
 
-echo Str::transliterate('Aldus PageMaker που περιείχαν εκδοχές του Lorem Ipsum.') . PHP_EOL;
+echo Str::urlify('Aldus PageMaker που  x   περιείχαν εκδοχές του Lorem Ipsum.') . PHP_EOL;
 
 echo Str::transliterate('V zadnjem času se Lorem Ipsum pojavlja tudi v priljubljenih programih za namizno založništvo kot') . PHP_EOL;
 

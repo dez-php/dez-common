@@ -23,8 +23,20 @@ class Str
             $transliterator = new Transliteration();
         }
 
-        $string = $transliterator->convert($string);
-        $string = preg_replace('/[^a-z0-9-_]+/ui', '', str_replace("\x20", '-', preg_replace('/\s+/u', "\x20", $string)));
+        return $transliterator->convert($string);
+    }
+
+    /**
+     * @param string $string
+     * @return string
+     */
+    public static function urlify($string = null)
+    {
+        $string = static::transliterate($string);
+        $string = implode("\x20", array_filter(array_map(function($word){
+            return static::underscore(trim($word));
+        }, explode("\x20", $string))));
+        $string = preg_replace('/[^a-z0-9-_]+/ui', '', str_replace("\x20", '-', $string));
 
         return strtolower(trim($string, '-'));
     }
