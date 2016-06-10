@@ -24,8 +24,7 @@ class Str
         }
 
         $string = $transliterator->convert($string);
-        $string = preg_replace('/\s+/u', ' ', $string);
-        $string = preg_replace('/[^a-z0-9-_]+/ui', '', str_replace("\x20", '-', $string));
+        $string = preg_replace('/[^a-z0-9-_]+/ui', '', str_replace("\x20", '-', preg_replace('/\s+/u', "\x20", $string)));
 
         return strtolower(trim($string, '-'));
     }
