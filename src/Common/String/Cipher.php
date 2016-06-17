@@ -48,7 +48,7 @@ class Cipher
      * @param string $key
      * @return array
      */
-    protected function cipher($string = null, $key = null)
+    protected static function cipher($string = null, $key = null)
     {
         $key = md5($key, true);
         $keyLength = strlen($key);
