@@ -2,13 +2,13 @@
 
 namespace Dez\Common\String;
 
-use Dez\Common\Str;
+use Dez\Common\String;
 
 /**
  * Class Transliteration
  * @package Dez\Common\String
  */
-class Transliteration extends Str
+class Transliteration extends String
 {
 
     /**

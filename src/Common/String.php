@@ -2,14 +2,35 @@
 
 namespace Dez\Common;
 
+use Dez\Common\String\Cipher;
 use Dez\Common\String\Transliteration;
 
 /**
- * Class Str
+ * Class String
  * @package Dez\Common
  */
-class Str
+class String
 {
+
+    /**
+     * @param null $string
+     * @param null $key
+     * @return string
+     */
+    public static function cipher($string = null, $key = null)
+    {
+        return Cipher::encode($string, $key);
+    }
+
+    /**
+     * @param null $string
+     * @param null $key
+     * @return string
+     */
+    public static function decipher($string = null, $key = null)
+    {
+        return Cipher::decode($string, $key);
+    }
 
     /**
      * @param string $string
